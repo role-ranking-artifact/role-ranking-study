@@ -1,0 +1,7 @@
+dataset	ir_dataset_name	run_file
+dl19	msmarco-passage/trec-dl-2019/judged	data/runs/dl19.txt
+dl20	msmarco-passage/trec-dl-2020/judged	data/runs/dl20.txt
+scifact	beir/scifact/test	data/runs/scifact.txt
+covid	beir/trec-covid	data/runs/covid.txt
+fiqa	beir/fiqa/test	data/runs/fiqa.txt
+climatefever	beir/climate-fever	data/runs/climatefever.txt

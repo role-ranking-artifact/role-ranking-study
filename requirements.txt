@@ -1,0 +1,11 @@
+accelerate
+beir
+einops
+numpy
+pandas
+pyserini
+scipy
+torch
+tqdm
+transformer-lens
+transformers

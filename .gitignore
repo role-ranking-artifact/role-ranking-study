@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Local experiment backups
+*.original.py
+*.premerge.py
+
+# Editor / IDE
+.idea/
+.vscode/
+
+# Local environments
+.venv/
+venv/
+env/
+
+# Large/local model artifacts
+models/
+cache/
+*.safetensors
+*.bin
+*.pt
+*.pth
