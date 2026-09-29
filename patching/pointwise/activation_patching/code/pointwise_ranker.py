@@ -291,13 +291,15 @@ class PointwiseLlmRanker(LlmRanker):
             self.model_name,
         )
 
-        # Default direction: Yes - No.
-        correct_token_id = yes_id
-        wrong_token_id = no_id
-        # Use No - Yes for irrelevance head patching so helpful head effects are positive.
-        if getattr(self, "doc_source", None) == "irrelevance" and self.patch_activation == "z":
+        # Orient LD by the label-specific correct answer.
+        if getattr(self, "doc_source", None) == "irrelevance":
             correct_token_id = no_id
             wrong_token_id = yes_id
+        elif getattr(self, "doc_source", None) == "relevance":
+            correct_token_id = yes_id
+            wrong_token_id = no_id
+        else:
+            raise ValueError(f"Unsupported doc_source={self.doc_source}")
 
         docs = ranking[:self.query_doc_limit]
         clean_dataloader, corrupt_dataloader = [], []
